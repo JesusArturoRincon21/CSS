@@ -1,30 +1,100 @@
 
+/* MODELO DE CAJA */
+* {
+    box-sizing: border-box;
+}
+
+/* ESTILOS GENERALES */
 body {
-  font-family: sans-serif;
-  color: #333333;
+    font-family: sans-serif;
+    color: #333333;
+    background-color: #f2f2f2;
+    margin: 0;
+}
+
+/* ENCABEZADO */
+header {
+    background-color: #343a40;
+    background-image: url('https://nextgenpc.com.co/cdn/shop/files/ChatGPTImageMay17_2025_08_54_18AM.png?v=1747490067&width=940');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px;
+    color: white;
 }
 
 header nav ul li a {
-  color: #0b5ed7; /* menú principal: azul */
+    color: #0b5ed7;
 }
 
-aside ul li a {
-  color: #198754; /* menú secundario: verde */
+/* CONTENIDO PRINCIPAL */
+main {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 15px;
 }
 
-footer ul li a {
-  color: #6f42c1; /* pie de página: morado */
+/* CONTENEDOR DE PRODUCTOS */
+.contenedor {
+    display: block;
+    white-space: nowrap;
+    overflow-x: auto;
+    padding: 15px;
 }
 
+/* CUADROS DE PRODUCTOS */
+.producto {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    width: 23%;
+    min-width: 220px;
+    min-height: 280px;
+    background-color: #e9ecef;
+    padding: 20px;
+    margin: 0 1% 15px 0;
+    border: 1px solid #cccccc;
+}
+
+/* PRECIOS */
+.precio {
+    font-size: 18px;
+    font-weight: bold;
+    color: #212529;
+}
+
+/* BOTONES */
 .btn {
-  color: #dc3545; /* rojo */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #dc3545;
 }
 
 .comprar {
-  color: #fd7e14; /* naranja: gana a .btn por venir después (cascada) */
+    background-color: #fd7e14;
 }
 
-.btn.comprar.destacado {
-  color: #d63384; /* rosa: gana por mayor especificidad, sin usar ID */
+/* MENÚ SECUNDARIO */
+aside {
+    background-color: #d1e7dd;
+    padding: 20px;
+    margin: 15px;
 }
 
+aside ul li a {
+    color: #198754;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+footer ul li a {
+    color: #6f42c1;
+}

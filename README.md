@@ -1,36 +1,167 @@
-# Catálogo de Productos – Simulador de Entrenamiento
+# Proyecto CSS - Tienda Gamer
 
-**Programa:** Análisis y desarrollo de software · **Ficha:** 3381732
-**Subactividad 1:** Estructurar la jerarquía de estilos (selectores, herencia, cascada y especificidad)
+## Información del aprendiz
 
-## Contenido del proyecto
+- **Aprendiz:** Jesús Arturo Rincón Villamizar
+- **Programa:** Análisis y Desarrollo de Software (ADSO)
+- **Institución:** SENA
+- **Proyecto:** Tienda Gamer
 
-- `index.html`: maquetado semántico (`header`, `nav`, `main`, `aside`, `section`, `article`, `footer`).
-- `style.css`: herencia desde `body`, selectores combinados y sistema plano de especificidad.
+## Descripción del proyecto
 
-## Cálculo de puntos de especificidad
+Este proyecto consiste en desarrollar una página web para una tienda de tecnología y productos gamer, utilizando HTML5 y CSS3.
 
-| Tipo de selector | Puntos |
-|------------------|--------|
-| Etiqueta (`a`, `p`, `li`) | 1 |
-| Clase (`.btn`) | 10 |
-| ID (`#btn-destacado`) | 100 |
+Durante las actividades se trabajaron los selectores CSS, la aplicación de colores, la herencia, la cascada, la especificidad, el modelo de caja y los fondos de los diferentes elementos.
 
-### Ejemplos usados en el proyecto
+---
 
-| Selector | Cálculo | Total |
-|----------|---------|-------|
-| `header nav ul li a` | 1+1+1+1+1 | 5 |
-| `aside ul li a` | 1+1+1+1 | 4 |
-| `footer ul li a` | 1+1+1+1 | 4 |
-| `.btn` | 10 | 10 |
-| `.comprar` | 10 | 10 |
-| `.btn.comprar.destacado` | 10+10+10 | 30 |
-| `#btn-destacado` (eliminado) | 100 | 100 |
+# Actividad 1: Selectores, herencia y cascada en CSS
 
-## Conclusiones
+## Objetivo
 
-1. **Herencia:** al declarar `font-family` y `color` en `body`, los títulos, párrafos y listas los adoptan sin reglas individuales.
-2. **Selectores combinados:** permiten pintar los enlaces según su zona (menú principal, filtros o pie) sin afectar a los demás.
-3. **Cascada vs. especificidad:** con reglas de igual peso (`.btn` y `.comprar`) gana la última escrita. Pero un ID (100 pts) vence a cualquier clase aunque esté antes en el código.
-4. **Refactorización:** se eliminaron las reglas con `#id` y se reemplazaron por un sistema plano de etiquetas y clases (`.btn.comprar.destacado`), resolviendo la colisión sin usar `!important`.
+Aprender a aplicar estilos a los elementos HTML utilizando selectores CSS y comprender cómo funcionan la herencia, la cascada y la especificidad.
+
+## Trabajo realizado
+
+Se aplicaron diferentes colores a los elementos de la página:
+
+- Menú principal: azul.
+- Menú secundario: verde.
+- Pie de página: morado.
+- Botones: rojo y naranja.
+- Botón destacado: rosa.
+
+## Selectores utilizados
+
+Se trabajaron los siguientes selectores:
+
+- **Selector de elemento:** permite aplicar estilos a elementos como `body`, `header` y `footer`.
+- **Selector descendiente:** permite seleccionar elementos que se encuentran dentro de otros elementos.
+- **Selector de clase:** permite aplicar estilos mediante clases como `.btn` y `.comprar`.
+- **Selector combinado:** permite seleccionar elementos que tienen varias clases.
+
+## Herencia
+
+Se utilizó la herencia para comprender cómo algunas propiedades, como el color y la fuente, pueden transmitirse desde un elemento padre hacia sus elementos hijos.
+
+## Cascada y especificidad
+
+Se realizaron pruebas con diferentes reglas CSS para observar cómo se determina qué estilo tiene prioridad.
+
+Se utilizaron las clases:
+
+```css
+.btn {
+    color: #dc3545;
+}
+
+.comprar {
+    color: #fd7e14;
+}
+
+.btn.comprar.destacado {
+    color: #d63384;
+}
+```
+
+Se comprobó que la especificidad de un selector puede hacer que una regla tenga prioridad sobre otra.
+
+---
+
+# Actividad 2: Modelo de caja y fondos
+
+## Objetivo
+
+Comprender cómo se organizan los elementos HTML mediante el modelo de caja y cómo aplicar colores e imágenes de fondo utilizando CSS.
+
+## Trabajo realizado
+
+Se realizaron los siguientes cambios:
+
+1. Se agregó el modelo de caja universal.
+2. Se asignaron diferentes colores de fondo a las secciones.
+3. Se agregó una imagen de fondo al encabezado.
+4. Se aplicaron propiedades de margen y relleno a los productos.
+5. Se organizaron los cuatro productos horizontalmente, cada uno dentro de su propio cuadro.
+
+## Modelo de caja
+
+Se utilizó la siguiente regla:
+
+```css
+* {
+    box-sizing: border-box;
+}
+```
+
+Esta propiedad permite controlar mejor las dimensiones de los elementos, incluyendo el contenido, el relleno y los bordes.
+
+## Fondos
+
+Se utilizaron las siguientes propiedades:
+
+- `background-color`: establece el color de fondo.
+- `background-image`: permite colocar una imagen de fondo.
+- `background-size`: controla el tamaño de la imagen.
+- `background-position`: establece la posición de la imagen.
+- `background-repeat`: controla si la imagen se repite.
+
+## Margin y Padding
+
+- **Margin:** es el espacio externo que separa un elemento de otros elementos.
+- **Padding:** es el espacio interno entre el contenido y el borde del elemento.
+
+## Organización de los productos
+
+Se agregaron cuatro productos a la tienda:
+
+| Producto | Precio |
+|---|---:|
+| Portátil Pro 14 | $3.200.000 |
+| Teclado Mecánico | $280.000 |
+| Audífonos Studio | $450.000 |
+| Disco SSD 1 TB | $320.000 |
+
+Cada producto tiene su propio cuadro con nombre, descripción, precio y botón de compra.
+
+Para organizarlos horizontalmente se utilizó:
+
+```css
+.producto {
+    display: inline-block;
+    vertical-align: top;
+    width: 23%;
+    padding: 20px;
+    margin: 0 1% 15px 0;
+    border: 1px solid #cccccc;
+}
+```
+
+No se utilizaron Flexbox ni CSS Grid para esta distribución.
+
+## Hallazgos: El modelo de caja
+
+### ¿Qué sucede cuando se utiliza un margin muy grande?
+
+Los elementos quedan más separados y pueden ocupar más espacio dentro de la página, modificando su distribución.
+
+### ¿Por qué es importante utilizar box-sizing: border-box?
+
+Porque facilita el control del tamaño de los elementos y evita que el padding y los bordes aumenten las dimensiones establecidas.
+
+---
+
+# Tecnologías utilizadas
+
+- HTML5
+- CSS3
+- Git
+- GitHub
+
+# Conclusión
+
+Durante estas dos actividades se aprendieron conceptos fundamentales de CSS para mejorar la presentación de una página web.
+
+En la primera actividad se trabajaron los selectores, la herencia, la cascada y la especificidad. En la segunda se aplicaron los conocimientos del modelo de caja, los fondos, los márgenes y los rellenos.
+
+Finalmente, se organizaron cuatro productos en una misma fila horizontal, cada uno con su propio cuadro y su información correspondiente.
