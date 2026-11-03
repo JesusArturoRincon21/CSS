@@ -1,0 +1,30 @@
+
+body {
+  font-family: sans-serif;
+  color: #333333;
+}
+
+header nav ul li a {
+  color: #0b5ed7; /* menú principal: azul */
+}
+
+aside ul li a {
+  color: #198754; /* menú secundario: verde */
+}
+
+footer ul li a {
+  color: #6f42c1; /* pie de página: morado */
+}
+
+.btn {
+  color: #dc3545; /* rojo */
+}
+
+.comprar {
+  color: #fd7e14; /* naranja: gana a .btn por venir después (cascada) */
+}
+
+.btn.comprar.destacado {
+  color: #d63384; /* rosa: gana por mayor especificidad, sin usar ID */
+}
+
