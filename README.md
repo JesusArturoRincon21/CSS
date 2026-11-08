@@ -200,6 +200,36 @@ Con un único punto de verdad, dos reglas no pueden terminar con tonos casi igua
 
 ---
 
+# Actividad 4: Pseudoclases y pseudoelementos
+
+## Objetivo
+
+Dar vida a la interfaz respondiendo a las acciones del usuario (pseudoclases) e inyectando detalles decorativos desde CSS (pseudoelementos), sin ensuciar el HTML.
+
+## Trabajo realizado
+
+1. Se creó la rama `feature/interactividad-css`.
+2. En el menú lateral (`aside`): `:hover` cambia fondo y texto, `::before` inyecta un indicador `• ` y `:focus` muestra un contorno con `--color-secundario`.
+3. En los botones de compra: `:hover` cambia el fondo, `:active` simula el hundimiento y `:focus-visible` muestra un contorno para el teclado.
+4. En los productos: `h2::after` dibuja una línea decorativa y `.producto::after` inyecta las insignias "¡Oferta!" (primer producto) y "Nuevo" (último).
+5. Los colores nuevos se agregaron al `:root` (`--color-boton-comprar-hover`, `--color-oferta`, `--color-nuevo`, `--transicion`).
+
+## Hallazgos: Pseudoclases y Pseudoelementos
+
+### 1. Diferencia entre pseudoclase y pseudoelemento
+
+Una pseudoclase (`:hover`, `:active`, `:focus`) selecciona un elemento que ya existe cuando está en cierto estado, es decir, reacciona a un evento del usuario. Un pseudoelemento (`::before`, `::after`) crea una parte virtual nueva, que no está en el HTML, y le inyecta contenido o decoración.
+
+### 2. Importancia de `:focus` para la accesibilidad
+
+Quien navega con la tecla Tab (por teclado o lector de pantalla) no usa el cursor, por lo que `:hover` no le sirve. `:focus` le muestra un contorno visible que indica en qué enlace está. Sin eso, no sabría dónde se encuentra y la página sería casi inutilizable.
+
+### 3. Por qué decorar con `::before` / `::after`
+
+Los adornos como insignias o iconos no son contenido, son presentación. Hacerlos con CSS mantiene el HTML limpio y semántico, evita etiquetas vacías, y permite cambiarlos en un solo lugar sin tocar el documento.
+
+---
+
 # Tecnologías utilizadas
 
 - HTML5
@@ -209,8 +239,8 @@ Con un único punto de verdad, dos reglas no pueden terminar con tonos casi igua
 
 # Conclusión
 
-Durante estas tres actividades se aprendieron conceptos fundamentales de CSS para mejorar la presentación de una página web.
+Durante estas cuatro actividades se aprendieron conceptos fundamentales de CSS para mejorar la presentación de una página web.
 
 En la primera actividad se trabajaron los selectores, la herencia, la cascada y la especificidad. En la segunda se aplicaron los conocimientos del modelo de caja, los fondos, los márgenes y los rellenos.
 
-En la tercera se centralizaron los colores, la tipografía y los espaciados en variables CSS. Finalmente, se organizaron cuatro productos en una misma fila horizontal, cada uno con su propio cuadro y su información correspondiente.
+En la tercera se centralizaron los colores, la tipografía y los espaciados en variables CSS. En la cuarta se agregó interactividad con pseudoclases y decoración con pseudoelementos. Finalmente, se organizaron cuatro productos en una misma fila horizontal, cada uno con su propio cuadro y su información correspondiente.

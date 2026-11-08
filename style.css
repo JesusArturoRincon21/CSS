@@ -18,6 +18,12 @@
     --color-texto: #333333;
     --color-texto-fuerte: #212529;
     --color-texto-claro: #ffffff;
+    --color-boton-comprar-hover: #e8590c;
+    --color-oferta: #d63384;
+    --color-nuevo: #6f42c1;
+
+    /* Transición */
+    --transicion: 0.25s ease;
 
     /* Tipografía */
     --fuente-principal: "Poppins", sans-serif;
@@ -84,6 +90,38 @@ main {
     padding: var(--espaciado-grande);
     margin: 0 1% var(--espaciado-medio) 0;
     border: 1px solid var(--color-borde);
+    position: relative;
+}
+
+/* Línea decorativa bajo el título (pseudoelemento) */
+.producto h2::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    margin-top: var(--espaciado-pequeno);
+    background-color: var(--color-primario);
+}
+
+/* Insignias virtuales: no existen en el HTML */
+.producto::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px var(--espaciado-pequeno);
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--color-texto-claro);
+}
+
+.producto:first-child::after {
+    content: "¡Oferta!";
+    background-color: var(--color-oferta);
+}
+
+.producto:last-child::after {
+    content: "Nuevo";
+    background-color: var(--color-nuevo);
 }
 
 /* PRECIOS */
@@ -104,6 +142,21 @@ main {
 
 .comprar {
     background-color: var(--color-boton-comprar);
+    transition: background-color var(--transicion), transform var(--transicion);
+}
+
+/* INTERACTIVIDAD: botones de compra */
+.comprar:hover {
+    background-color: var(--color-boton-comprar-hover);
+}
+
+.comprar:active {
+    transform: translateY(2px) scale(0.97); /* efecto de hundimiento */
+}
+
+.comprar:focus-visible {
+    outline: 3px solid var(--color-primario);
+    outline-offset: 2px;
 }
 
 /* MENÚ SECUNDARIO */
@@ -113,8 +166,34 @@ aside {
     margin: var(--espaciado-medio);
 }
 
+aside ul {
+    list-style: none; /* el indicador lo inyecta ::before */
+    padding: 0;
+}
+
 aside ul li a {
+    display: block;
     color: var(--color-secundario);
+    text-decoration: none;
+    padding: var(--espaciado-pequeno);
+    transition: background-color var(--transicion), color var(--transicion);
+}
+
+/* Indicador visual inyectado desde CSS */
+aside ul li a::before {
+    content: "• ";
+}
+
+/* :hover - cambia fondo y texto */
+aside ul li a:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+}
+
+/* :focus - contorno visible para navegación con Tab */
+aside ul li a:focus {
+    outline: 3px solid var(--color-secundario);
+    outline-offset: 2px;
 }
 
 /* PIE DE PÁGINA */
