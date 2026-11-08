@@ -1,3 +1,33 @@
+/* ==========================================================
+   CENTRAL DE MANDO: tokens de diseño
+   Cambiar un valor aquí actualiza toda la interfaz.
+   ========================================================== */
+:root {
+    /* Colores */
+    --color-primario: #0b5ed7;
+    --color-secundario: #198754;
+    --color-acento: #6f42c1;
+    --color-boton: #dc3545;
+    --color-boton-comprar: #fd7e14;
+    --color-fondo: #f2f2f2;
+    --color-oscuro: #343a40;
+    --color-superficie: #ffffff;
+    --color-tarjeta: #e9ecef;
+    --color-aside: #d1e7dd;
+    --color-borde: #cccccc;
+    --color-texto: #333333;
+    --color-texto-fuerte: #212529;
+    --color-texto-claro: #ffffff;
+
+    /* Tipografía */
+    --fuente-principal: "Poppins", sans-serif;
+
+    /* Espaciado (escala) */
+    --espaciado-pequeno: 10px;
+    --espaciado-medio: 15px;
+    --espaciado-grande: 20px;
+    --espaciado-xl: 30px;
+}
 
 /* MODELO DE CAJA */
 * {
@@ -6,32 +36,32 @@
 
 /* ESTILOS GENERALES */
 body {
-    font-family: sans-serif;
-    color: #333333;
-    background-color: #f2f2f2;
+    font-family: var(--fuente-principal);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
     margin: 0;
 }
 
 /* ENCABEZADO */
 header {
-    background-color: #343a40;
+    background-color: var(--color-oscuro);
     background-image: url('https://nextgenpc.com.co/cdn/shop/files/ChatGPTImageMay17_2025_08_54_18AM.png?v=1747490067&width=940');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 30px;
-    color: white;
+    padding: var(--espaciado-xl);
+    color: var(--color-texto-claro);
 }
 
 header nav ul li a {
-    color: #0b5ed7;
+    color: var(--color-primario);
 }
 
 /* CONTENIDO PRINCIPAL */
 main {
-    background-color: #ffffff;
-    padding: 20px;
-    margin: 15px;
+    background-color: var(--color-superficie);
+    padding: var(--espaciado-grande);
+    margin: var(--espaciado-medio);
 }
 
 /* CONTENEDOR DE PRODUCTOS */
@@ -39,7 +69,7 @@ main {
     display: block;
     white-space: nowrap;
     overflow-x: auto;
-    padding: 15px;
+    padding: var(--espaciado-medio);
 }
 
 /* CUADROS DE PRODUCTOS */
@@ -50,51 +80,51 @@ main {
     width: 23%;
     min-width: 220px;
     min-height: 280px;
-    background-color: #e9ecef;
-    padding: 20px;
-    margin: 0 1% 15px 0;
-    border: 1px solid #cccccc;
+    background-color: var(--color-tarjeta);
+    padding: var(--espaciado-grande);
+    margin: 0 1% var(--espaciado-medio) 0;
+    border: 1px solid var(--color-borde);
 }
 
 /* PRECIOS */
 .precio {
     font-size: 18px;
     font-weight: bold;
-    color: #212529;
+    color: var(--color-texto-fuerte);
 }
 
 /* BOTONES */
 .btn {
-    padding: 10px 20px;
+    padding: var(--espaciado-pequeno) var(--espaciado-grande);
     border: none;
     cursor: pointer;
-    color: white;
-    background-color: #dc3545;
+    color: var(--color-texto-claro);
+    background-color: var(--color-boton);
 }
 
 .comprar {
-    background-color: #fd7e14;
+    background-color: var(--color-boton-comprar);
 }
 
 /* MENÚ SECUNDARIO */
 aside {
-    background-color: #d1e7dd;
-    padding: 20px;
-    margin: 15px;
+    background-color: var(--color-aside);
+    padding: var(--espaciado-grande);
+    margin: var(--espaciado-medio);
 }
 
 aside ul li a {
-    color: #198754;
+    color: var(--color-secundario);
 }
 
 /* PIE DE PÁGINA */
 footer {
-    background-color: #343a40;
-    color: white;
-    padding: 20px;
-    margin-top: 15px;
+    background-color: var(--color-oscuro);
+    color: var(--color-texto-claro);
+    padding: var(--espaciado-grande);
+    margin-top: var(--espaciado-medio);
 }
 
 footer ul li a {
-    color: #6f42c1;
+    color: var(--color-acento);
 }

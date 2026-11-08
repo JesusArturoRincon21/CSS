@@ -151,6 +151,55 @@ Porque facilita el control del tamaño de los elementos y evita que el padding y
 
 ---
 
+# Actividad 3: Identidad visual (Custom Properties y Tipografías)
+
+## Objetivo
+
+Centralizar colores, tipografía y espaciados en variables CSS dentro de `:root`, para que toda la interfaz responda a un único estándar visual.
+
+## Trabajo realizado
+
+1. Se creó la rama `feature/identidad-visual`.
+2. Se declaró `:root` al inicio de `style.css` con variables de color, tipografía y espaciado.
+3. Se vinculó la fuente **Poppins** desde Google Fonts en el `<head>` y se asignó a `--fuente-principal`.
+4. Se reemplazaron todos los colores y medidas de `margin` y `padding` por `var()`.
+
+## Hallazgos: Centralización de Identidad Visual y Espaciado
+
+### 1. Variables declaradas
+
+| Tipo | Variable | Valor |
+|---|---|---|
+| Color | `--color-primario` | #0b5ed7 |
+| Color | `--color-secundario` | #198754 |
+| Color | `--color-acento` | #6f42c1 |
+| Color | `--color-boton` | #dc3545 |
+| Color | `--color-boton-comprar` | #fd7e14 |
+| Color | `--color-fondo` | #f2f2f2 |
+| Color | `--color-oscuro` | #343a40 |
+| Color | `--color-superficie` | #ffffff |
+| Color | `--color-tarjeta` | #e9ecef |
+| Color | `--color-aside` | #d1e7dd |
+| Color | `--color-borde` | #cccccc |
+| Color | `--color-texto` | #333333 |
+| Color | `--color-texto-fuerte` | #212529 |
+| Color | `--color-texto-claro` | #ffffff |
+| Tipografía | `--fuente-principal` | "Poppins", sans-serif |
+| Espaciado | `--espaciado-pequeno` | 10px |
+| Espaciado | `--espaciado-medio` | 15px |
+| Espaciado | `--espaciado-grande` | 20px |
+| Espaciado | `--espaciado-xl` | 30px |
+
+### 2. Ventaja de reutilizar medidas de margen y relleno
+
+Antes, valores como 15px y 20px estaban escritos en muchos selectores. Ahora cada espacio sale de una escala de cuatro medidas, así que las tarjetas, el contenido y el menú tienen la misma proporción de aire. Si el cliente pide más separación, se cambia una sola línea en `:root` y no se corre el riesgo de dejar espacios desiguales.
+
+### 3. Cómo `:root` previene colisiones visuales
+
+Con un único punto de verdad, dos reglas no pueden terminar con tonos casi iguales ni con medidas distintas por error (por ejemplo 14px frente a 15px). A medida que la hoja crece, cada regla nueva consulta los mismos tokens, y la paleta y los espacios se mantienen coherentes.
+
+---
+
 # Tecnologías utilizadas
 
 - HTML5
@@ -160,8 +209,8 @@ Porque facilita el control del tamaño de los elementos y evita que el padding y
 
 # Conclusión
 
-Durante estas dos actividades se aprendieron conceptos fundamentales de CSS para mejorar la presentación de una página web.
+Durante estas tres actividades se aprendieron conceptos fundamentales de CSS para mejorar la presentación de una página web.
 
 En la primera actividad se trabajaron los selectores, la herencia, la cascada y la especificidad. En la segunda se aplicaron los conocimientos del modelo de caja, los fondos, los márgenes y los rellenos.
 
-Finalmente, se organizaron cuatro productos en una misma fila horizontal, cada uno con su propio cuadro y su información correspondiente.
+En la tercera se centralizaron los colores, la tipografía y los espaciados en variables CSS. Finalmente, se organizaron cuatro productos en una misma fila horizontal, cada uno con su propio cuadro y su información correspondiente.
