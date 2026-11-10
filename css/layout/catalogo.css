@@ -1,12 +1,11 @@
-/* CONTENIDO PRINCIPAL */
-main {
+/* BLOQUE: catalog */
+.catalog {
     background-color: var(--color-superficie);
     padding: var(--espaciado-grande);
     margin: var(--espaciado-medio);
 }
 
-/* CONTENEDOR DE PRODUCTOS */
-.contenedor {
+.catalog__list {
     display: block;
     white-space: nowrap;
     overflow-x: auto;

@@ -230,6 +230,67 @@ Los adornos como insignias o iconos no son contenido, son presentación. Hacerlo
 
 ---
 
+# Actividad 5: Arquitectura modular y metodología BEM
+
+## Objetivo
+
+Reorganizar el proyecto sin cambiar su aspecto: dividir el CSS en módulos independientes y nombrar las clases con la metodología BEM (Bloque, Elemento, Modificador).
+
+## Trabajo realizado
+
+1. Se creó la rama `feature/arquitectura-bem`.
+2. **Modularización:** se creó la carpeta `components/` con un archivo por componente y se conectaron con `@import` en `style.css`.
+3. **Marcado BEM:** se reescribieron las clases de `index.html`, eliminando las genéricas (`.producto`, `.precio`, `.contenedor`, `.comprar`).
+4. **Modificadores:** `card--oferta`, `card--nuevo`, `btn--comprar`, y dos listos para usar: `card--destacada` y `btn--secundario`.
+5. **Selectores planos:** se eliminaron los selectores anidados (`.producto h2`, `aside ul li a`, `header nav ul li a`) y cada regla depende de una sola clase.
+6. Los módulos siguen usando las variables del `:root` con `var(--...)`.
+
+## Estructura del proyecto
+
+```
+index.html
+style.css                  (@import + :root + base)
+README.md
+components/
+    encabezado.css         (bloques header y menu-principal)
+    catalogo.css           (bloque catalog)
+    tarjeta.css            (bloque card)
+    botones.css            (bloque btn)
+    menu-lateral.css       (bloque menu-lateral)
+    pie.css                (bloque footer)
+```
+
+## Cambio de nombres de las clases
+
+| Antes | Ahora (BEM) |
+|---|---|
+| `.producto` | `.card` |
+| `.producto h2` | `.card__title` |
+| `p` de descripción | `.card__description` |
+| `.precio` | `.card__price` |
+| `.btn.comprar` | `.btn.btn--comprar` |
+| `.contenedor` | `.catalog__list` |
+| `aside ul li a` | `.menu-lateral__link` |
+| `header nav ul li a` | `.menu-principal__link` |
+| `:first-child` (¡Oferta!) | `.card--oferta` |
+| `:last-child` (Nuevo) | `.card--nuevo` |
+
+## Hallazgos: Arquitectura BEM y Modularidad
+
+### 1. Qué significa BEM y cómo se escribe
+
+BEM significa **Bloque, Elemento, Modificador**. Un bloque es un componente independiente (`card`). Un elemento es una parte de ese bloque, unido con doble guion bajo (`card__title`). Un modificador es una variación, unido con doble guion medio (`card--oferta`). Visualmente: `bloque__elemento--modificador`.
+
+### 2. Por qué dividir el CSS facilita el trabajo colaborativo
+
+Cada persona puede trabajar en un archivo distinto (por ejemplo, una en `tarjeta.css` y otra en `botones.css`) sin pisar el trabajo de las demás, y los conflictos de Git son menos probables. Además, es más fácil encontrar dónde cambiar algo.
+
+### 3. Cómo BEM evita la guerra de especificidad
+
+Con selectores como `.producto h2` o `aside ul li a`, un selector más fuerte puede pisar a otro y obliga a usar reglas aún más pesadas. Con BEM, cada regla usa una sola clase (peso 10), así que todas tienen el mismo peso y gana la que se escribe después. Las reglas dejan de pisarse por accidente.
+
+---
+
 # Tecnologías utilizadas
 
 - HTML5
@@ -239,8 +300,8 @@ Los adornos como insignias o iconos no son contenido, son presentación. Hacerlo
 
 # Conclusión
 
-Durante estas cuatro actividades se aprendieron conceptos fundamentales de CSS para mejorar la presentación de una página web.
+Durante estas cinco actividades se aprendieron conceptos fundamentales de CSS para mejorar la presentación de una página web.
 
 En la primera actividad se trabajaron los selectores, la herencia, la cascada y la especificidad. En la segunda se aplicaron los conocimientos del modelo de caja, los fondos, los márgenes y los rellenos.
 
-En la tercera se centralizaron los colores, la tipografía y los espaciados en variables CSS. En la cuarta se agregó interactividad con pseudoclases y decoración con pseudoelementos. Finalmente, se organizaron cuatro productos en una misma fila horizontal, cada uno con su propio cuadro y su información correspondiente.
+En la tercera se centralizaron los colores, la tipografía y los espaciados en variables CSS. En la cuarta se agregó interactividad con pseudoclases y decoración con pseudoelementos. En la quinta se modularizó el CSS y se aplicó la metodología BEM. Finalmente, se organizaron cuatro productos en una misma fila horizontal, cada uno con su propio cuadro y su información correspondiente.

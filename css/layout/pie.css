@@ -1,11 +1,7 @@
-/* PIE DE PÁGINA */
-footer {
+/* BLOQUE: footer */
+.footer {
     background-color: var(--color-oscuro);
     color: var(--color-texto-claro);
     padding: var(--espaciado-grande);
     margin-top: var(--espaciado-medio);
-}
-
-footer ul li a {
-    color: var(--color-acento);
 }

@@ -1,5 +1,5 @@
-/* ENCABEZADO */
-header {
+/* BLOQUE: header */
+.header {
     background-color: var(--color-oscuro);
     background-image: url('https://nextgenpc.com.co/cdn/shop/files/ChatGPTImageMay17_2025_08_54_18AM.png?v=1747490067&width=940');
     background-size: cover;
@@ -9,6 +9,7 @@ header {
     color: var(--color-texto-claro);
 }
 
-header nav ul li a {
+/* BLOQUE: menu-principal */
+.menu-principal__link {
     color: var(--color-primario);
 }

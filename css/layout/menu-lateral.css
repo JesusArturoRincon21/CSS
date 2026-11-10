@@ -1,16 +1,18 @@
-/* MENÚ SECUNDARIO */
-aside {
+/* BLOQUE: menu-lateral */
+.menu-lateral {
     background-color: var(--color-aside);
     padding: var(--espaciado-grande);
     margin: var(--espaciado-medio);
 }
 
-aside ul {
-    list-style: none; /* el indicador lo inyecta ::before */
+/* ELEMENTO: menu-lateral__list (el indicador lo inyecta ::before) */
+.menu-lateral__list {
+    list-style: none;
     padding: 0;
 }
 
-aside ul li a {
+/* ELEMENTO: menu-lateral__link */
+.menu-lateral__link {
     display: block;
     color: var(--color-secundario);
     text-decoration: none;
@@ -19,18 +21,18 @@ aside ul li a {
 }
 
 /* Indicador visual inyectado desde CSS */
-aside ul li a::before {
+.menu-lateral__link::before {
     content: "• ";
 }
 
 /* :hover - cambia fondo y texto */
-aside ul li a:hover {
+.menu-lateral__link:hover {
     background-color: var(--color-secundario);
     color: var(--color-texto-claro);
 }
 
 /* :focus - contorno visible para navegación con Tab */
-aside ul li a:focus {
+.menu-lateral__link:focus {
     outline: 3px solid var(--color-secundario);
     outline-offset: 2px;
 }

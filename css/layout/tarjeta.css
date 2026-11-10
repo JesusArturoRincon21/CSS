@@ -1,5 +1,5 @@
-/* CUADROS DE PRODUCTOS */
-.producto {
+/* BLOQUE: card */
+.card {
     display: inline-block;
     vertical-align: top;
     white-space: normal;
@@ -13,8 +13,8 @@
     position: relative;
 }
 
-/* Línea decorativa bajo el título (pseudoelemento) */
-.producto h2::after {
+/* ELEMENTO: card__title (con línea decorativa ::after) */
+.card__title::after {
     content: "";
     display: block;
     width: 40px;
@@ -23,8 +23,16 @@
     background-color: var(--color-primario);
 }
 
-/* Insignias virtuales: no existen en el HTML */
-.producto::after {
+/* ELEMENTO: card__price */
+.card__price {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-texto-fuerte);
+}
+
+/* MODIFICADORES: insignias virtuales inyectadas con ::after */
+.card--oferta::after,
+.card--nuevo::after {
     position: absolute;
     top: 0;
     right: 0;
@@ -34,19 +42,17 @@
     color: var(--color-texto-claro);
 }
 
-.producto:first-child::after {
+.card--oferta::after {
     content: "¡Oferta!";
     background-color: var(--color-oferta);
 }
 
-.producto:last-child::after {
+.card--nuevo::after {
     content: "Nuevo";
     background-color: var(--color-nuevo);
 }
 
-/* PRECIOS */
-.precio {
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--color-texto-fuerte);
+/* MODIFICADOR listo para usar: tarjeta destacada */
+.card--destacada {
+    border-color: var(--color-primario);
 }
