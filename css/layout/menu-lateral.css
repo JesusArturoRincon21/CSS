@@ -1,0 +1,36 @@
+/* MENÚ SECUNDARIO */
+aside {
+    background-color: var(--color-aside);
+    padding: var(--espaciado-grande);
+    margin: var(--espaciado-medio);
+}
+
+aside ul {
+    list-style: none; /* el indicador lo inyecta ::before */
+    padding: 0;
+}
+
+aside ul li a {
+    display: block;
+    color: var(--color-secundario);
+    text-decoration: none;
+    padding: var(--espaciado-pequeno);
+    transition: background-color var(--transicion), color var(--transicion);
+}
+
+/* Indicador visual inyectado desde CSS */
+aside ul li a::before {
+    content: "• ";
+}
+
+/* :hover - cambia fondo y texto */
+aside ul li a:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+}
+
+/* :focus - contorno visible para navegación con Tab */
+aside ul li a:focus {
+    outline: 3px solid var(--color-secundario);
+    outline-offset: 2px;
+}

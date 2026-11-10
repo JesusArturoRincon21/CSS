@@ -1,0 +1,27 @@
+/* BOTONES */
+.btn {
+    padding: var(--espaciado-pequeno) var(--espaciado-grande);
+    border: none;
+    cursor: pointer;
+    color: var(--color-texto-claro);
+    background-color: var(--color-boton);
+}
+
+.comprar {
+    background-color: var(--color-boton-comprar);
+    transition: background-color var(--transicion), transform var(--transicion);
+}
+
+/* INTERACTIVIDAD: botones de compra */
+.comprar:hover {
+    background-color: var(--color-boton-comprar-hover);
+}
+
+.comprar:active {
+    transform: translateY(2px) scale(0.97); /* efecto de hundimiento */
+}
+
+.comprar:focus-visible {
+    outline: 3px solid var(--color-primario);
+    outline-offset: 2px;
+}

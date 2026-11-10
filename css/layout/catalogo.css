@@ -1,0 +1,14 @@
+/* CONTENIDO PRINCIPAL */
+main {
+    background-color: var(--color-superficie);
+    padding: var(--espaciado-grande);
+    margin: var(--espaciado-medio);
+}
+
+/* CONTENEDOR DE PRODUCTOS */
+.contenedor {
+    display: block;
+    white-space: nowrap;
+    overflow-x: auto;
+    padding: var(--espaciado-medio);
+}

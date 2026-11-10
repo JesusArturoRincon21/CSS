@@ -1,0 +1,52 @@
+/* CUADROS DE PRODUCTOS */
+.producto {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    width: 23%;
+    min-width: 220px;
+    min-height: 280px;
+    background-color: var(--color-tarjeta);
+    padding: var(--espaciado-grande);
+    margin: 0 1% var(--espaciado-medio) 0;
+    border: 1px solid var(--color-borde);
+    position: relative;
+}
+
+/* Línea decorativa bajo el título (pseudoelemento) */
+.producto h2::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    margin-top: var(--espaciado-pequeno);
+    background-color: var(--color-primario);
+}
+
+/* Insignias virtuales: no existen en el HTML */
+.producto::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px var(--espaciado-pequeno);
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--color-texto-claro);
+}
+
+.producto:first-child::after {
+    content: "¡Oferta!";
+    background-color: var(--color-oferta);
+}
+
+.producto:last-child::after {
+    content: "Nuevo";
+    background-color: var(--color-nuevo);
+}
+
+/* PRECIOS */
+.precio {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-texto-fuerte);
+}
