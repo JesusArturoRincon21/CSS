@@ -11,72 +11,73 @@
 </head>
 <body>
 
-    <!-- ENCABEZADO -->
-    <header>
-        <h1>Tienda Gamer</h1>
+    <!-- ENCABEZADO (bloque: header) -->
+    <header class="header">
+        <h1 class="header__title">Tienda Gamer</h1>
 
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Contacto</a></li>
+        <!-- MENÚ PRINCIPAL (bloque: menu-principal) -->
+        <nav class="menu-principal">
+            <ul class="menu-principal__list">
+                <li class="menu-principal__item"><a class="menu-principal__link" href="#">Inicio</a></li>
+                <li class="menu-principal__item"><a class="menu-principal__link" href="#">Productos</a></li>
+                <li class="menu-principal__item"><a class="menu-principal__link" href="#">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main>
-        <h2>Nuestros productos</h2>
+    <!-- CONTENIDO PRINCIPAL (bloque: catalog) -->
+    <main class="catalog">
+        <h2 class="catalog__title">Nuestros productos</h2>
 
-        <section class="contenedor">
+        <section class="catalog__list">
 
-            <!-- PRODUCTO 1 -->
-            <article class="producto">
-                <h2>Portátil Pro 14</h2>
-                <p>Equipo ligero con procesador de última generación, ideal para programar.</p>
-                <p class="precio">$ 3.200.000</p>
-                <button class="btn comprar">Comprar</button>
+            <!-- PRODUCTO 1: tarjeta con modificador de oferta -->
+            <article class="card card--oferta">
+                <h2 class="card__title">Portátil Pro 14</h2>
+                <p class="card__description">Equipo ligero con procesador de última generación, ideal para programar.</p>
+                <p class="card__price">$ 3.200.000</p>
+                <button class="btn btn--comprar">Comprar</button>
             </article>
 
             <!-- PRODUCTO 2 -->
-            <article class="producto">
-                <h2>Teclado Mecánico</h2>
-                <p>Teclado con switches táctiles y retroiluminación configurable.</p>
-                <p class="precio">$ 280.000</p>
-                <button class="btn comprar">Comprar</button>
+            <article class="card">
+                <h2 class="card__title">Teclado Mecánico</h2>
+                <p class="card__description">Teclado con switches táctiles y retroiluminación configurable.</p>
+                <p class="card__price">$ 280.000</p>
+                <button class="btn btn--comprar">Comprar</button>
             </article>
 
             <!-- PRODUCTO 3 -->
-            <article class="producto">
-                <h2>Audífonos Studio</h2>
-                <p>Cancelación de ruido y hasta 30 horas de batería.</p>
-                <p class="precio">$ 450.000</p>
-                <button class="btn comprar">Comprar</button>
+            <article class="card">
+                <h2 class="card__title">Audífonos Studio</h2>
+                <p class="card__description">Cancelación de ruido y hasta 30 horas de batería.</p>
+                <p class="card__price">$ 450.000</p>
+                <button class="btn btn--comprar">Comprar</button>
             </article>
 
-            <!-- PRODUCTO 4 -->
-            <article class="producto">
-                <h2>Disco SSD 1 TB</h2>
-                <p>Almacenamiento rápido para acelerar el arranque y la carga de proyectos.</p>
-                <p class="precio">$ 320.000</p>
-                <button class="btn comprar">Comprar</button>
+            <!-- PRODUCTO 4: tarjeta con modificador de novedad -->
+            <article class="card card--nuevo">
+                <h2 class="card__title">Disco SSD 1 TB</h2>
+                <p class="card__description">Almacenamiento rápido para acelerar el arranque y la carga de proyectos.</p>
+                <p class="card__price">$ 320.000</p>
+                <button class="btn btn--comprar">Comprar</button>
             </article>
 
         </section>
     </main>
 
-    <!-- MENÚ SECUNDARIO -->
-    <aside>
-        <h3>Más información</h3>
-        <ul>
-            <li><a href="#">Ofertas</a></li>
-            <li><a href="#">Novedades</a></li>
+    <!-- MENÚ SECUNDARIO (bloque: menu-lateral) -->
+    <aside class="menu-lateral">
+        <h3 class="menu-lateral__title">Más información</h3>
+        <ul class="menu-lateral__list">
+            <li class="menu-lateral__item"><a class="menu-lateral__link" href="#">Ofertas</a></li>
+            <li class="menu-lateral__item"><a class="menu-lateral__link" href="#">Novedades</a></li>
         </ul>
     </aside>
 
-    <!-- PIE DE PÁGINA -->
-    <footer>
-        <p>© 2026 Tienda Gamer - Todos los derechos reservados.</p>
+    <!-- PIE DE PÁGINA (bloque: footer) -->
+    <footer class="footer">
+        <p class="footer__text">© 2026 Tienda Gamer - Todos los derechos reservados.</p>
     </footer>
 
 </body>
