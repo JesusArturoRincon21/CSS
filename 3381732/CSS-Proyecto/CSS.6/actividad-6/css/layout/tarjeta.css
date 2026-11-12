@@ -1,0 +1,88 @@
+/* BLOQUE: card - columna que se estira a la altura de su fila.
+   (align-items: stretch del contenedor iguala el alto de todas las
+   tarjetas; un height: 100% lo impediría al ser porcentaje de un
+   contenedor de alto automático.) */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    flex: 1 1 200px;
+    background-color: var(--color-tarjeta);
+    padding: var(--espaciado-grande);
+    border: 1px solid var(--color-borde);
+    position: relative;
+}
+
+/* ELEMENTO: card__title (con línea decorativa ::after) */
+.card__title::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    margin-top: var(--espaciado-pequeno);
+    background-color: var(--color-primario);
+}
+
+/* ELEMENTO: card__description - resorte invisible:
+   absorbe el espacio libre y empuja el botón al fondo */
+.card__description {
+    flex-grow: 1;
+}
+
+/* ELEMENTO: card__price-wrapper - micro-flexbox de precios */
+.card__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap; /* si no caben en una línea, el precio tachado baja */
+    column-gap: var(--espaciado-pequeno);
+    margin-bottom: var(--espaciado-medio);
+}
+
+/* ELEMENTO: card__price - precio de oferta, grande */
+.card__price {
+    font-size: 22px;
+    font-weight: bold;
+    white-space: nowrap;
+    color: var(--color-texto-fuerte);
+}
+
+/* ELEMENTO: card__price-old - precio original tachado */
+.card__price-old {
+    font-size: 14px;
+    white-space: nowrap;
+    color: var(--color-texto-suave);
+    text-decoration: line-through;
+}
+
+/* ELEMENTO: card__button - no se estira a todo el ancho */
+.card__button {
+    align-self: flex-start;
+}
+
+/* MODIFICADORES: insignias virtuales inyectadas con ::after */
+.card--oferta::after,
+.card--nuevo::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px var(--espaciado-pequeno);
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--color-texto-claro);
+}
+
+.card--oferta::after {
+    content: "¡Oferta!";
+    background-color: var(--color-oferta);
+}
+
+.card--nuevo::after {
+    content: "Nuevo";
+    background-color: var(--color-nuevo);
+}
+
+/* MODIFICADOR listo para usar: tarjeta destacada */
+.card--destacada {
+    border-color: var(--color-primario);
+}

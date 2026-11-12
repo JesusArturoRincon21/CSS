@@ -1,0 +1,28 @@
+/* BLOQUE: footer - derechos, enlaces legales y redes repartidos */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espaciado-medio);
+    background-color: var(--color-oscuro);
+    color: var(--color-texto-claro);
+    padding: var(--espaciado-grande);
+}
+
+.footer__text {
+    margin: 0;
+}
+
+/* ELEMENTO: footer__list - enlaces en fila */
+.footer__list {
+    display: flex;
+    gap: var(--espaciado-medio);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer__link {
+    color: var(--color-texto-claro);
+}

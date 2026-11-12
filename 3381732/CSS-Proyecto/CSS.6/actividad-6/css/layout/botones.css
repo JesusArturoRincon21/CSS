@@ -1,0 +1,33 @@
+/* BLOQUE: btn */
+.btn {
+    padding: var(--espaciado-pequeno) var(--espaciado-grande);
+    border: none;
+    cursor: pointer;
+    color: var(--color-texto-claro);
+    background-color: var(--color-boton);
+}
+
+/* MODIFICADOR: btn--comprar */
+.btn--comprar {
+    background-color: var(--color-boton-comprar);
+    transition: background-color var(--transicion), transform var(--transicion);
+}
+
+/* Estados de interacción */
+.btn--comprar:hover {
+    background-color: var(--color-boton-comprar-hover);
+}
+
+.btn--comprar:active {
+    transform: translateY(2px) scale(0.97); /* efecto de hundimiento */
+}
+
+.btn--comprar:focus-visible {
+    outline: 3px solid var(--color-primario);
+    outline-offset: 2px;
+}
+
+/* MODIFICADOR listo para usar: botón secundario */
+.btn--secundario {
+    background-color: var(--color-secundario);
+}
