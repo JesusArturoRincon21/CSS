@@ -1,5 +1,9 @@
-/* BLOQUE: menu-lateral */
+/* BLOQUE: menu-lateral - columna con espacios uniformes entre bloques */
 .menu-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-grande);
+    flex: 1 1 240px;
     background-color: var(--color-aside);
     padding: var(--espaciado-grande);
     margin: var(--espaciado-medio);
@@ -7,8 +11,16 @@
 
 /* ELEMENTO: menu-lateral__list (el indicador lo inyecta ::before) */
 .menu-lateral__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-pequeno);
     list-style: none;
+    margin: 0;
     padding: 0;
+}
+
+.menu-lateral__title {
+    margin: 0 0 var(--espaciado-pequeno);
 }
 
 /* ELEMENTO: menu-lateral__link */

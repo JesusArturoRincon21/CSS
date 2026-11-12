@@ -1,14 +1,14 @@
-/* BLOQUE: card */
+/* BLOQUE: card - columna que se estira a la altura de su fila.
+   (align-items: stretch del contenedor iguala el alto de todas las
+   tarjetas; un height: 100% lo impediría al ser porcentaje de un
+   contenedor de alto automático.) */
 .card {
-    display: inline-block;
-    vertical-align: top;
-    white-space: normal;
-    width: 23%;
-    min-width: 220px;
-    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    flex: 1 1 200px;
     background-color: var(--color-tarjeta);
     padding: var(--espaciado-grande);
-    margin: 0 1% var(--espaciado-medio) 0;
     border: 1px solid var(--color-borde);
     position: relative;
 }
@@ -23,11 +23,41 @@
     background-color: var(--color-primario);
 }
 
-/* ELEMENTO: card__price */
+/* ELEMENTO: card__description - resorte invisible:
+   absorbe el espacio libre y empuja el botón al fondo */
+.card__description {
+    flex-grow: 1;
+}
+
+/* ELEMENTO: card__price-wrapper - micro-flexbox de precios */
+.card__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap; /* si no caben en una línea, el precio tachado baja */
+    column-gap: var(--espaciado-pequeno);
+    margin-bottom: var(--espaciado-medio);
+}
+
+/* ELEMENTO: card__price - precio de oferta, grande */
 .card__price {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
+    white-space: nowrap;
     color: var(--color-texto-fuerte);
+}
+
+/* ELEMENTO: card__price-old - precio original tachado */
+.card__price-old {
+    font-size: 14px;
+    white-space: nowrap;
+    color: var(--color-texto-suave);
+    text-decoration: line-through;
+}
+
+/* ELEMENTO: card__button - no se estira a todo el ancho */
+.card__button {
+    align-self: flex-start;
 }
 
 /* MODIFICADORES: insignias virtuales inyectadas con ::after */

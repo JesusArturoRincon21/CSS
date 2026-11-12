@@ -33,6 +33,7 @@
     --color-boton-comprar-hover: #e8590c;
     --color-oferta: #d63384;
     --color-nuevo: #6f42c1;
+    --color-texto-suave: #6c757d;
 
     /* Transición */
     --transicion: 0.25s ease;
@@ -58,4 +59,24 @@ body {
     color: var(--color-texto);
     background-color: var(--color-fondo);
     margin: 0;
+}
+
+/* ==========================================================
+   LAYOUT GLOBAL (Flexbox)
+   ========================================================== */
+
+/* BLOQUE: app-layout - envuelve toda la página.
+   Columna de alto mínimo 100vh: el pie siempre queda abajo. */
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* BLOQUE: main-wrapper - menú lateral y contenido, lado a lado.
+   flex: 1 le ordena absorber todo el alto sobrante. */
+.main-wrapper {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap; /* en pantallas angostas el menú pasa arriba */
 }

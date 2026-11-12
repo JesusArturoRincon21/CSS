@@ -291,6 +291,49 @@ Con selectores como `.producto h2` o `aside ul li a`, un selector más fuerte pu
 
 ---
 
+# Actividad 6: Arquitectura total con Flexbox
+
+## Objetivo
+
+Aplicar Flexbox en toda la vista (ejes principal y cruzado) combinándolo con las variables del `:root` y la nomenclatura BEM, para lograr un catálogo elástico, simétrico y bien distribuido.
+
+## Trabajo realizado
+
+1. Se creó la rama `feature/arquitectura-flexbox`.
+2. **Layout global:** `.app-layout` envuelve toda la página (`display: flex; flex-direction: column; min-height: 100vh`) y `.main-wrapper` (`display: flex; flex: 1`) coloca el menú lateral y el contenido lado a lado.
+3. **Cabecera:** `.header` con `justify-content: space-between` y `align-items: center`; la lista del menú (`.menu-principal__list`) usa `display: flex` y `gap: var(--espaciado-medio)`.
+4. **Menú lateral:** `.menu-lateral` en columna con `gap: var(--espaciado-grande)`.
+5. **Pie de página:** `.footer` con `justify-content: space-around` y `align-items: center`, repartiendo derechos, enlaces legales y redes.
+6. **Tarjeta:** `.card` en columna; `.card__description` con `flex-grow: 1` empuja el botón al fondo; `.card__price-wrapper` es un micro-flexbox (`space-between` y `align-items: baseline`) con el precio de oferta y el precio original tachado.
+
+## Archivos modificados
+
+| Archivo | Cambio |
+|---|---|
+| `index.html` | contenedores `.app-layout` y `.main-wrapper`, menú lateral antes del contenido, nuevos grupos del `aside`, enlaces del pie y precios con wrapper |
+| `style.css` | `.app-layout` y `.main-wrapper` |
+| `css/layout/encabezado.css` | flex en `.header` y `.menu-principal__list` |
+| `css/layout/catalogo.css` | `.catalog` flexible y `.catalog__list` con flex y `gap` |
+| `css/layout/tarjeta.css` | tarjeta en columna, resorte y micro-flexbox de precios |
+| `css/layout/menu-lateral.css` | columna con `gap` |
+| `css/layout/pie.css` | distribución con `space-around` |
+
+## Hallazgos: Arquitectura Total con Flexbox
+
+### 1. Por qué `min-height: 100vh` y `flex-direction: column` en el contenedor global
+
+`min-height: 100vh` hace que la página mida al menos el alto de la pantalla, aunque tenga poco contenido. Con `flex-direction: column`, el contenedor apila encabezado, zona central y pie, y como la zona central tiene `flex: 1` absorbe el espacio sobrante. Así el pie siempre queda abajo y no queda flotando a mitad de la pantalla.
+
+### 2. Cómo `gap` reemplazó los márgenes laterales en los menús
+
+Antes había que poner un margen a cada elemento y quitarlo al último para que el espacio no sobrara. Con `gap` el espacio se define una sola vez en el contenedor, se aplica solo entre elementos y sale de una variable (`var(--espaciado-medio)`), así que cambiar el valor actualiza todos los menús.
+
+### 3. Cómo BEM, Custom Properties y Flexbox crean una tarjeta resistente
+
+BEM da nombres claros y planos a cada parte de la tarjeta, las variables mantienen los colores y espacios iguales en todas, y Flexbox reparte el espacio: la descripción crece y empuja el botón al fondo. Por eso, aunque un texto sea más largo o corto, todas las tarjetas de una fila miden lo mismo y los botones quedan alineados.
+
+---
+
 # Tecnologías utilizadas
 
 - HTML5
@@ -300,8 +343,8 @@ Con selectores como `.producto h2` o `aside ul li a`, un selector más fuerte pu
 
 # Conclusión
 
-Durante estas cinco actividades se aprendieron conceptos fundamentales de CSS para mejorar la presentación de una página web.
+Durante estas seis actividades se aprendieron conceptos fundamentales de CSS para mejorar la presentación de una página web.
 
 En la primera actividad se trabajaron los selectores, la herencia, la cascada y la especificidad. En la segunda se aplicaron los conocimientos del modelo de caja, los fondos, los márgenes y los rellenos.
 
-En la tercera se centralizaron los colores, la tipografía y los espaciados en variables CSS. En la cuarta se agregó interactividad con pseudoclases y decoración con pseudoelementos. En la quinta se modularizó el CSS y se aplicó la metodología BEM. Finalmente, se organizaron cuatro productos en una misma fila horizontal, cada uno con su propio cuadro y su información correspondiente.
+En la tercera se centralizaron los colores, la tipografía y los espaciados en variables CSS. En la cuarta se agregó interactividad con pseudoclases y decoración con pseudoelementos. En la quinta se modularizó el CSS y se aplicó la metodología BEM. En la sexta se aplicó Flexbox a todo el diseño. Finalmente, se organizaron cuatro productos en una misma fila horizontal, cada uno con su propio cuadro y su información correspondiente.

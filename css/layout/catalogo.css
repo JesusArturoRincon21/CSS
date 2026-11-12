@@ -1,13 +1,17 @@
-/* BLOQUE: catalog */
+/* BLOQUE: catalog - absorbe casi todo el espacio libre
+   (factor de crecimiento alto) y deja al menú lateral su ancho base */
 .catalog {
+    flex: 100 1 480px;
+    min-width: 0;
     background-color: var(--color-superficie);
     padding: var(--espaciado-grande);
     margin: var(--espaciado-medio);
 }
 
+/* ELEMENTO: catalog__list - vitrina flexible de tarjetas */
 .catalog__list {
-    display: block;
-    white-space: nowrap;
-    overflow-x: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-grande);
     padding: var(--espaciado-medio);
 }

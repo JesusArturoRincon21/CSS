@@ -1,5 +1,10 @@
-/* BLOQUE: header */
+/* BLOQUE: header - logotipo y menú en extremos opuestos */
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espaciado-medio);
     background-color: var(--color-oscuro);
     background-image: url('https://nextgenpc.com.co/cdn/shop/files/ChatGPTImageMay17_2025_08_54_18AM.png?v=1747490067&width=940');
     background-size: cover;
@@ -9,7 +14,15 @@
     color: var(--color-texto-claro);
 }
 
-/* BLOQUE: menu-principal */
+/* BLOQUE: menu-principal - enlaces en fila con espacio uniforme */
+.menu-principal__list {
+    display: flex;
+    gap: var(--espaciado-medio);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .menu-principal__link {
     color: var(--color-primario);
 }
