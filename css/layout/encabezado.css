@@ -1,4 +1,3 @@
-
 /* BLOQUE: header - logotipo y menú en extremos opuestos */
 .header {
     display: flex;
@@ -15,30 +14,27 @@
     color: var(--color-texto-claro);
 }
 
-/* BLOQUE: menu-principal - enlaces en fila */
+/* BLOQUE: menu-principal - enlaces en fila con espacio uniforme */
 .menu-principal__list {
     display: flex;
-    align-items: center;
-    gap: 40px;
+    gap: var(--espaciado-medio);
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-/* ELEMENTO: enlaces del menú */
+/* Texto claro: se lee bien sobre la imagen oscura del encabezado.
+   El relleno aporta espacio extra entre enlaces sin salirse de la escala. */
 .menu-principal__link {
-    color: #ffffff;
+    color: var(--color-texto-claro);
     font-weight: 600;
-    font-size: 16px;
     text-decoration: none;
-    padding: 10px 5px;
-    display: inline-block;
+    padding: var(--espaciado-pequeno);
     transition: color var(--transicion);
 }
 
-/* INTERACCIÓN: hover y focus */
 .menu-principal__link:hover,
 .menu-principal__link:focus {
-    color: #00bfff;
+    color: var(--color-enlace-hover);
     text-decoration: underline;
 }
